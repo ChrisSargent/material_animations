@@ -1,0 +1,23 @@
+{
+  "name": "Experimental-Projects",
+  "version": "1.0.0",
+  "authors": [
+    "Chris Sargent <chris@stickypixel.com>"
+  ],
+  "description": "Setup for testing and experimenting with some ideas",
+  "license": "MIT",
+  "homepage": "www.stickypixel.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".sass-cache"
+  ],
+  "dependencies": {
+    "reset-css": "~2.0.2011012602",
+    "bourbon": "~4.2.6",
+    "angular": "~1.4.8",
+    "angular-animate": "~1.4.8"
+  },
+  "devDependencies": {}
+}

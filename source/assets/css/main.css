@@ -1,0 +1,431 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+div, header, footer, section, article, aside, button, img, a, dl, dt, dd, li, ul,
+p, h1, h2, h3, h4, h5, h6 {
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+select,
+input,
+label,
+legend,
+button,
+textarea,
+fieldset,
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=search],
+input[type=range] {
+  appearance: none;
+  min-width: 0;
+}
+
+input,
+select,
+button,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: none;
+}
+input:active, input:focus,
+select:active,
+select:focus,
+button:active,
+button:focus,
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  /* display: none */
+}
+
+input[type=number] {
+  /* -moz-appearance: textfield */
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=time]::-webkit-clear-button {
+  /* appearance: none */
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  /* appearance: none */
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type='button'] {
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+}
+button:hover, button:active, button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type='button']:hover,
+input[type='button']:active,
+input[type='button']:focus {
+  outline: 0;
+}
+
+/* when a large primary title is present */
+/* if there are additional actions or supporting text */
+/* no actions or supporting text */
+* {
+  box-sizing: content-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button.control {
+  position: absolute;
+}
+
+.card-wrap {
+  width: 350px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.material-card {
+  width: 100%;
+  border-radius: 0.125em;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #fff;
+}
+
+header {
+  max-height: 4.5em;
+  font-weight: 600;
+  height: 4.5em;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease-in-out;
+}
+header .header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header .avatar {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 1em;
+  display: block;
+  border-radius: 2.5em;
+  background: url(http://fillmurray.com/50/50) no-repeat center;
+  background-size: cover;
+}
+header .title {
+  color: #333333;
+  font-size: 0.875em;
+}
+header .subtitle {
+  color: #999999;
+  font-size: 0.875em;
+}
+
+.media-area {
+  padding-bottom: 56.25%;
+  background: url(http://fillmurray.com/300/170) no-repeat left top;
+  background-size: cover;
+  transition: all 0.25s ease-in-out;
+}
+
+.supporting-content {
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  max-height: 10em;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+.supporting-content span {
+  color: #333333;
+  font-size: 0.875em;
+}
+
+.actions {
+  padding: 0.5em;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.btn-action {
+  color: #333333;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.75em;
+  padding-left: 0.5em;
+  cursor: pointer;
+}
+.btn-action span {
+  font-size: 0.875em;
+}
+.btn-action + button {
+  margin-left: 0.5em;
+}
+.btn-action:hover {
+  background-color: #eeeeee;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  color: #333333;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  z-index: -1;
+  height: 0;
+  overflow: hidden;
+}
+.details span {
+  font-size: 0.875em;
+}
+.details img {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.expandable {
+  position: relative;
+  width: 100%;
+  height: 3.625em;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out, margin 0.25s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 3em;
+  line-height: 1em;
+  margin-top: -0.1em;
+  margin-right: 0.1em;
+}
+
+.page-wrap {
+  height: 100%;
+}
+
+.state0 .supporting-content,
+.state0 .media-area {
+  display: block;
+}
+
+.state1 .supporting-content,
+.state1 .media-area,
+.state2 .supporting-content,
+.state2 .media-area,
+.state3 .supporting-content,
+.state3 .media-area,
+.state4 .supporting-content,
+.state4 .media-area {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.state1 .supporting-content,
+.state2 .supporting-content,
+.state3 .supporting-content,
+.state4 .supporting-content {
+  max-height: 0;
+}
+.state1 .material-card,
+.state2 .material-card,
+.state3 .material-card,
+.state4 .material-card {
+  box-shadow: none;
+}
+.state1 header,
+.state1 .expandable,
+.state2 header,
+.state2 .expandable,
+.state3 header,
+.state3 .expandable,
+.state4 header,
+.state4 .expandable {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.state1 .expandable,
+.state2 .expandable,
+.state3 .expandable,
+.state4 .expandable {
+  margin-top: 10px;
+  transform: scale(0.8);
+}
+.state1 .actions,
+.state2 .actions,
+.state3 .actions,
+.state4 .actions {
+  opacity: 0;
+}
+.state1 .details,
+.state2 .details,
+.state3 .details,
+.state4 .details {
+  height: 100%;
+}
+
+.state2 .material-card,
+.state3 .material-card,
+.state4 .material-card {
+  height: 100%;
+}
+.state2 header,
+.state3 header,
+.state4 header {
+  transform: scale(0);
+}
+.state2 .expandable,
+.state3 .expandable,
+.state4 .expandable {
+  transition: all 0.2s ease-in-out, height 0.3s ease-out;
+  margin-top: 0;
+}
+.state2 .details,
+.state3 .details,
+.state4 .details {
+  transition: opacity 0.5s ease-in-out;
+  z-index: auto;
+  opacity: 1;
+}
+
+.state3 header {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.state3 .expandable {
+  transform: scale(1);
+  margin-top: 0;
+  background-color: white;
+  height: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */

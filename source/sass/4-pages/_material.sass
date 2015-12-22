@@ -1,0 +1,245 @@
+
+$Shadow1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+$Shadow2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+$Shadow3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+$Shadow4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+$Shadow5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+$CardRadius: 0.125em
+$CardHeaderHeight: 4.5em
+$Title: 0.875em
+$SubTitle: 0.875em
+$smallPad: 0.5em
+$midPad: 0.75em
+$hPad: 1em
+$vPadTop: 1em
+$vPadTopLarge: 1.5em
+/* when a large primary title is present */
+$vPadBottom: 1em
+/* if there are additional actions or supporting text */
+$vPadBottomLarge: 1.5em
+/* no actions or supporting text */
+$avatarSize: 2.5em
+$titleColor: #333333
+$supportingTextColor: #333333
+$supportingTextSize: 0.875em
+$detailTextSize: 0.875em
+$detailTextColor: #333333
+$actionButtonTextSize: 0.875em
+$actionButtonTextColor: #333333
+
+$cardWidth: 350px
+
+*
+    // transition: all 0.25s ease-in-out
+    box-sizing: content-box
+
+html,
+body
+    width: 100%
+    height: 100%
+
+button.control
+    position: absolute
+
+.card-wrap
+    width: $cardWidth
+    position: relative
+    margin-left: auto
+    margin-right: auto
+    height: 100%
+
+.material-card
+    width: 100%
+    border-radius: $CardRadius
+    display: block
+    box-shadow: $Shadow1
+    background-color: #fff
+
+header
+    max-height: 4.5em
+    font-weight: 600
+    height: $CardHeaderHeight
+    padding-top: $vPadTop
+    padding-right: $hPad
+    padding-bottom: $vPadBottom
+    padding-left: $hPad
+    display: flex
+    align-items: center
+    transition: all 0.15s ease-in-out
+
+    .header-text
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+    .avatar
+        width: $avatarSize
+        height: $avatarSize
+        margin-right: 1em
+        display: block
+        border-radius: $avatarSize
+        background: url(http://fillmurray.com/50/50) no-repeat center
+        background-size: cover
+
+    .title
+        color: $titleColor
+        font-size: $Title
+
+    .subtitle
+        color: lighten($titleColor, 40%)
+        font-size: $SubTitle
+
+.media-area
+    padding-bottom: 56.25%
+    background: url(http://fillmurray.com/300/170) no-repeat left top
+    background-size: cover
+    transition: all 0.25s ease-in-out
+
+.supporting-content
+    padding-top: $vPadTop
+    padding-right: $hPad
+    padding-bottom: $vPadBottom
+    padding-left: $hPad
+    max-height: 10em
+    overflow: hidden
+    transition: all 0.25s ease-in-out
+
+    span
+        color: $supportingTextColor
+        font-size: $supportingTextSize
+
+.actions
+    padding: $smallPad
+    position: relative
+    opacity: 1
+    transition: opacity 0.5s ease-in-out
+
+.btn-action
+    color: $actionButtonTextColor
+    font-weight: 600
+    text-transform: uppercase
+    padding-top: $smallPad
+    padding-right: $smallPad
+    padding-bottom: $midPad
+    padding-left: $smallPad
+    cursor: pointer
+
+    span
+        font-size: $actionButtonTextSize
+
+    + button
+        margin-left: 0.5em
+
+    &:hover
+        background-color: #eeeeee
+
+.details
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    opacity: 0
+    color: $detailTextColor
+    padding-top: $vPadTop
+    padding-right: $hPad
+    padding-bottom: $vPadBottom
+    padding-left: $hPad
+    z-index: -1
+    height: 0
+    overflow: hidden
+
+    span
+        font-size: $detailTextSize
+
+    img
+        width: 100%
+        margin: 1em 0
+
+.expandable
+    position: relative
+    width: 100%
+    height: 3.625em
+    transform: scale(1)
+    transition: transform 0.5s ease-in-out, margin 0.25s ease-in-out
+
+.close
+    position: absolute
+    top: 0
+    right: 0
+    cursor: pointer
+    font-size: 3em
+    line-height: 1em
+    margin-top: -0.1em
+    margin-right: 0.1em
+
+.page-wrap
+    height: 100%
+
+.state0
+    .supporting-content,
+    .media-area
+        display: block
+
+.state1,
+.state2,
+.state3,
+.state4
+    .supporting-content,
+    .media-area
+        padding-top: 0
+        padding-bottom: 0
+
+    .supporting-content
+        max-height: 0
+
+    .material-card
+        box-shadow: none
+
+    header,
+    .expandable
+        box-shadow: $Shadow1
+
+    .expandable
+        margin-top: 10px
+        transform: scale(0.8)
+
+    .actions
+        opacity: 0
+
+    .details
+        height: 100%
+
+
+.state2,
+.state3,
+.state4
+    .material-card
+        height: 100%
+
+    header
+        transform: scale(0)
+
+    .expandable
+        transition: all 0.2s ease-in-out, height 0.3s ease-out
+        margin-top: 0
+
+    .details
+        transition: opacity 0.5s ease-in-out
+        z-index: auto
+        opacity: 1
+
+.state3
+
+    header
+        max-height: 0
+        opacity: 0
+        padding-top: 0
+        padding-bottom: 0
+        overflow: hidden
+
+    .expandable
+        transform: scale(1)
+        margin-top: 0
+        background-color: white
+        height: 100%
