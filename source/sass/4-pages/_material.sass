@@ -1,36 +1,4 @@
-
-$Shadow1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
-$Shadow2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
-$Shadow3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
-$Shadow4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
-$Shadow5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
-$CardRadius: 0.125em
-$CardHeaderHeight: 4.5em
-$Title: 0.875em
-$SubTitle: 0.875em
-$smallPad: 0.5em
-$midPad: 0.75em
-$hPad: 1em
-$vPadTop: 1em
-$vPadTopLarge: 1.5em
-/* when a large primary title is present */
-$vPadBottom: 1em
-/* if there are additional actions or supporting text */
-$vPadBottomLarge: 1.5em
-/* no actions or supporting text */
-$avatarSize: 2.5em
-$titleColor: #333333
-$supportingTextColor: #333333
-$supportingTextSize: 0.875em
-$detailTextSize: 0.875em
-$detailTextColor: #333333
-$actionButtonTextSize: 0.875em
-$actionButtonTextColor: #333333
-
-$cardWidth: 350px
-
 *
-    // transition: all 0.25s ease-in-out
     box-sizing: content-box
 
 html,
@@ -139,14 +107,11 @@ header
     right: 0
     bottom: 0
     left: 0
-    opacity: 0
     color: $detailTextColor
     padding-top: $vPadTop
     padding-right: $hPad
     padding-bottom: $vPadBottom
     padding-left: $hPad
-    z-index: -1
-    height: 0
     overflow: hidden
 
     span
@@ -175,71 +140,3 @@ header
 
 .page-wrap
     height: 100%
-
-.state0
-    .supporting-content,
-    .media-area
-        display: block
-
-.state1,
-.state2,
-.state3,
-.state4
-    .supporting-content,
-    .media-area
-        padding-top: 0
-        padding-bottom: 0
-
-    .supporting-content
-        max-height: 0
-
-    .material-card
-        box-shadow: none
-
-    header,
-    .expandable
-        box-shadow: $Shadow1
-
-    .expandable
-        margin-top: 10px
-        transform: scale(0.8)
-
-    .actions
-        opacity: 0
-
-    .details
-        height: 100%
-
-
-.state2,
-.state3,
-.state4
-    .material-card
-        height: 100%
-
-    header
-        transform: scale(0)
-
-    .expandable
-        transition: all 0.2s ease-in-out, height 0.3s ease-out
-        margin-top: 0
-
-    .details
-        transition: opacity 0.5s ease-in-out
-        z-index: auto
-        opacity: 1
-
-.state3
-
-    header
-        max-height: 0
-        opacity: 0
-        padding-top: 0
-        padding-bottom: 0
-        overflow: hidden
-
-    .expandable
-        transform: scale(1)
-        margin-top: 0
-        background-color: white
-        height: 100%

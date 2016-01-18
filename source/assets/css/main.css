@@ -127,6 +127,9 @@ input[type="search"]::-webkit-search-results-decoration {
   /* appearance: none */
 }
 
+/* when a large primary title is present */
+/* if there are additional actions or supporting text */
+/* no actions or supporting text */
 a {
   text-decoration: none;
   outline: 0;
@@ -169,9 +172,6 @@ input[type='button']:focus {
   outline: 0;
 }
 
-/* when a large primary title is present */
-/* if there are additional actions or supporting text */
-/* no actions or supporting text */
 * {
   box-sizing: content-box;
 }
@@ -291,14 +291,11 @@ header .subtitle {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
   color: #333333;
   padding-top: 1em;
   padding-right: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
-  z-index: -1;
-  height: 0;
   overflow: hidden;
 }
 .details span {
@@ -332,9 +329,57 @@ header .subtitle {
   height: 100%;
 }
 
-.state0 .supporting-content,
-.state0 .media-area {
+.view-container {
+  position: relative;
+}
+
+.view-container > .view.ng-animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 500px;
+}
+
+.view.ng-enter,
+.view.ng-leave {
+  transition: all 1s;
+}
+
+.view.ng-leave.ng-leave-active .map {
+  background: none;
+}
+
+.map.ng-anchor-in {
+  transition: all 1s;
+}
+
+.map {
+  width: 400px;
+  height: 200px;
+  top: 0px;
+  left: 0px;
+  background: url("../img/barcelona.jpg") no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.map-full {
+  position: absolute;
+  height: 100vh;
+}
+
+.link {
   display: block;
+}
+
+header {
+  background-color: pink;
+}
+
+.state0 .details,
+.state1 .details {
+  opacity: 0;
 }
 
 .state1 .supporting-content,
@@ -383,12 +428,6 @@ header .subtitle {
 .state4 .actions {
   opacity: 0;
 }
-.state1 .details,
-.state2 .details,
-.state3 .details,
-.state4 .details {
-  height: 100%;
-}
 
 .state2 .material-card,
 .state3 .material-card,
@@ -410,7 +449,6 @@ header .subtitle {
 .state3 .details,
 .state4 .details {
   transition: opacity 0.5s ease-in-out;
-  z-index: auto;
   opacity: 1;
 }
 

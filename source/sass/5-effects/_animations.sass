@@ -1,0 +1,62 @@
+.state0,
+.state1
+    .details
+        opacity: 0
+
+.state1,
+.state2,
+.state3,
+.state4
+    .supporting-content,
+    .media-area
+        padding-top: 0
+        padding-bottom: 0
+
+    .supporting-content
+        max-height: 0
+
+    .material-card
+        box-shadow: none
+
+    header,
+    .expandable
+        box-shadow: $Shadow1
+
+    .expandable
+        margin-top: 10px
+        transform: scale(0.8)
+
+    .actions
+        opacity: 0
+
+.state2,
+.state3,
+.state4
+    .material-card
+        height: 100%
+
+    header
+        transform: scale(0)
+
+    .expandable
+        transition: all 0.2s ease-in-out, height 0.3s ease-out
+        margin-top: 0
+
+    .details
+        transition: opacity 0.5s ease-in-out
+        opacity: 1
+
+.state3
+
+    header
+        max-height: 0
+        opacity: 0
+        padding-top: 0
+        padding-bottom: 0
+        overflow: hidden
+
+    .expandable
+        transform: scale(1)
+        margin-top: 0
+        background-color: white
+        height: 100%

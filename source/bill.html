@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Material Animations Test with Angular</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="assets/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="page-wrap" ng-app="myApp" ng-controller="uiCtrl">
+            <button class="control" ng-click="changeState()">Next Step</button>
+            <div class="card-wrap" ng-class="currentState">
+                <article class="material-card">
+                    <header>
+                        <div class="avatar"></div>
+                        <div class="header-text">
+                            <h1 class="title" ng-bind="card.title"></h1>
+                            <span class="subtitle" ng-bind="card.subtitle"></span>
+                        </div>
+                    </header>
+                    <div class="media-area"></div>
+                    <div class="supporting-content">
+                        <span ng-bind="card.supportContent"></span>
+                    </div>
+                    <div class="expandable">
+                        <div class="actions" ng-if="!showDetails">
+                            <button class="btn-action" ng-click="autoState()">
+                                <span class="action-text">Details &#x25BE;</span>
+                            </button>
+                        </div>
+                        <div class="details" ng-if="showDetails">
+                            <span ng-bind="card.detailsTitle"></span>
+                            <img src="http://fillmurray.com/300/200">
+                            <span ng-bind="card.details"></span>
+                            <i class="close" ng-click="changeState()">&times;</i>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <script src="assets/js/angular.js"></script>
+        <script src="assets/js/angular-animate.js"></script>
+        <script src="assets/js/uiCtrl.js"></script>
+    </body>
+</html>

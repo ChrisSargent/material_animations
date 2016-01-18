@@ -1,0 +1,49 @@
+.view-container
+    position: relative
+
+.view-container > .view.ng-animate
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    min-height: 500px
+
+.view.ng-enter,
+.view.ng-leave
+    transition: all 1s
+
+.view.ng-enter
+    // Nothing Yet
+
+.view.ng-enter.ng-enter-active,
+.view.ng-leave
+    // Nothing Yet
+
+.view.ng-leave.ng-leave-active
+    .map
+        background: none
+
+.map.ng-anchor-in
+    transition: all 1s
+
+.map.ng-anchor-out
+    // Nothing Yet
+
+.map
+    width: 400px
+    height: 200px
+    top: 0px
+    left: 0px
+    background: url('../img/barcelona.jpg') no-repeat center top
+    background-size: cover
+    background-attachment: fixed
+
+.map-full
+    position: absolute
+    height: 100vh
+
+.link
+    display: block
+
+header
+    background-color: pink
